@@ -1,0 +1,150 @@
+html, body {
+  background-color: #000;
+  height: 100%;
+  font-family: "Tahoma";
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+#push, #footer {
+  height: 60px;
+}
+
+#footer {
+}
+#footer img {
+  height:50px;
+  margin: 5px 0;
+}
+
+.pageFooter {
+  background-color: #CF022B;
+  color: white;
+  margin: 15px 5px;
+  padding: 5px 10px;
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+}
+.pageFooter a {
+  color: white;
+  font-weight: bold;
+}
+
+.pageTitle {
+  background-color: #CF022B;
+  color: white;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+
+  margin: 15px 5px;
+  padding: 5px 10px;
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+}
+.pageTitle span {
+  padding: 0 10px;
+}
+
+.project {
+  border: 1px solid #ccc;
+  margin: 10px 5px;
+  padding: 15px;
+  -moz-border-radius  : 5px;
+  -webkit-border-radius: 5px;
+}
+
+.prj-default {
+  background-color: #ccc;
+  color: #666;
+}
+.prj-success {
+  background-color: #88AA2E;
+  color: #fff;
+}
+.prj-warning {
+  background-color: #FAAA0A;
+  color: #fff;
+}
+.prj-danger {
+  background-color: #CF022B;
+  color: #fff;
+}
+
+.project-heading {
+  padding: 0 5px 10px 5px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.list-group {
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  padding: 10px;
+}
+
+.list-group-item  img {
+  display: inline-block;
+  height: 24px;
+  margin-left: 10px;
+}
+
+.list-group-item.report, .list-group-item.result {
+  border-top: none;
+  padding: 5px 10px 5px 35px;
+  font-style: italic;
+}
+
+.list-group-item {
+  font-size: 16px;
+  cursor: pointer;
+}
+.list-group-item-default {
+  color: #666;
+  background-color: #ccc;
+}
+.list-group-item-success {
+  color: #fff;
+  background-color: #88AA2E;
+}
+.list-group-item-warning {
+  color: #fff;
+  background-color: #FAAA0A;
+}
+.list-group-item-danger {
+  color: #fff;
+  background-color: #CF022B;
+}
+
+.result span, .report span {
+  font-weight: bold;
+}
+
+#push {
+  height: 100px;
+}
+
+/**
+.logobr, .logobl {
+	position: absolute;
+	bottom: 0;
+	margin: 20px;
+	margin-bottom: 60px;
+}
+.logobl { left: 0; 	width: 150px; }
+
+.logobr { right: 0; height: 60px; }
+*/
+
+.logobl { margin:0 25px; width: 150px; }
+
+.logobr { margin:0 25px; height: 50px; }

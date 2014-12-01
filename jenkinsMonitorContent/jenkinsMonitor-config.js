@@ -1,9 +1,9 @@
 var jmData = {
-	"title": "TDF Service Center",
+	"title": "Jenkins overview",
 	"colSize": "col-lg-3",
 	"timer": "60000",
 	"data": [
-		{	"jenkinsUrl": "http://10.78.216.18:8080/",
+		{	"jenkinsUrl": "http://xxx.xxx.xxx.xxx:8080/",
 			"projects": [
 				{	"projectName": "NSTG-ASF",
 					"jobs": [
@@ -49,7 +49,7 @@ var jmData = {
 				}
 			]
 		},
-		{	"jenkinsUrl": "http://10.78.216.47:8080/",
+		{	"jenkinsUrl": "http://xxx.xxx.xxx.xxx:8080/",
 			"projects": [
 				{	"projectName": "CRISTAL",
 					"jobs": [

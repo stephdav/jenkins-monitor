@@ -128,18 +128,43 @@ function updatePrjStatus(prjId, status) {
 function updateReportJob(jobId, jobUrl, reports) {
 	$.each(reports, function(l, report) {
 		$.getJSON(jobUrl + "lastCompletedBuild/" + report + 'Report/' + jsonpUrl, function(data) {
-			var nbTests = data.failCount + data.passCount;
-			var rep = data.passCount + ' / ' + nbTests ;
 			var delta = 0;
-			$.each(data.suites, function(i, suite) {
-				$.each(suite.cases, function(j, tcase) {
-					if (tcase.status == 'FIXED') {
-						delta += 1;
-					} else if (tcase.status == 'REGRESSION') {
-						delta -= 1;
-					}
+			var nbPass = 0;
+			var nbTests = 0;
+			var rep;
+
+			if (typeof(data.childReports) != 'undefined' && data.childReports.length > 0) {
+				$.each(data.childReports, function(a, childReport) {
+					nbPass += childReport.result.passCount;
+					nbTests += childReport.result.failCount;
+					$.each(childReport.result.suites, function(i, suite) {
+						$.each(suite.cases, function(j, tcase) {
+							if (tcase.status == 'FIXED') {
+								delta += 1;
+							} else if (tcase.status == 'REGRESSION') {
+								delta -= 1;
+							}
+						});
+					});
 				});
-			});
+				nbTests = nbTests + nbPass;
+				rep = nbPass + ' / ' + nbTests ;
+			} else {
+				nbPass = data.passCount;
+				nbTests = data.failCount;
+				$.each(data.suites, function(i, suite) {
+					$.each(suite.cases, function(j, tcase) {
+						if (tcase.status == 'FIXED') {
+							delta += 1;
+						} else if (tcase.status == 'REGRESSION') {
+							delta -= 1;
+						}
+					});
+				});
+				nbTests += nbPass;
+				rep = nbPass + ' / ' + nbTests ;
+			}
+
 			var icon='empty32.png';
 			if (delta < 0) {
 				icon='lessTests.png';
